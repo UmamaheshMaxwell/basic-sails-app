@@ -1,0 +1,10 @@
+<div class="container">
+	<form action="/customer/update/<%= customer.id %>" method="post">
+		<h2>Edit Customer</h2>
+		<input class="form-control" value="<%= customer.name %>" type="text" placeholder="Name" name="name"> <br>
+		<input class="form-control" value="<%= customer.email %>"type="text" placeholder="Email" name="email"><br>
+		<input class="form-control" value="<%= customer.state %>"type="text" placeholder="State" name="state"><br>
+
+		<input class="btn btn-primary" type="submit" value="Edit Customer">
+	</form>	
+</div>
