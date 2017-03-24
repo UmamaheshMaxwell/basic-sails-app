@@ -20,7 +20,7 @@ module.exports = {
 	},
 
 	show: function(req, res, next){
-		Customer.findOne(req.params.id, function(err, customer){
+		Customer.findOne(req.params.id).populateAll().exec(function(err, customer){
 			if(err){
 				next(err)
 			}

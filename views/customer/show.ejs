@@ -1,13 +1,39 @@
 <div class="container">
 	<h2>Customer Details</h2>
 	<br>
-	<h2>Name  : <i><%= customer.name %></i></h2>
-	<h2>Email : <i><%= customer.email %></i></h2>
-	<h2>State : <i><%= customer.state %></i></h2>
+	<h3>Name  : <i><%= customer.name %></i></h3>
+	<h3>Email : <i><%= customer.email %></i></h3>
+	<h3>State : <i><%= customer.state %></i></h3>
 	<br>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Symbol</th>
+				<th>Number of Shares</th>
+				<th>Current Price</th>
+				<th></th>
+				<th></th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+		<% customer.stocks.forEach(function(stock) {  %>	  
+			<tr>
+				<td><%= stock.symbol%></td>
+				<td><%= stock.number_of_shares %></td>
+				<td></td>
+				<td><a class="btn btn-info" href="/stock/show/<%= stock.id %>">Show</a></td>
+				<td><a class="btn btn-warning" href="/stock/edit/<%= stock.id %>">Edit</a></td>
+				<td><a class="btn btn-danger" href="/stock/destroy/<%= stock.id %>">Delete</a></td>
+			</tr>	  
+		<% }); %>
+		</tbody>			
+		</tbody>
+	</table>
 	<form action="/stock/new" method="POST">
 		<input type="hidden" name="owner" value="<%= customer.id %>">
 		<input class="btn btn-primary" type="submit" value="Add Stock">
+		<a class="btn btn-primary" href="/customer/index">Back</a>
 	</form>
 </div>
 

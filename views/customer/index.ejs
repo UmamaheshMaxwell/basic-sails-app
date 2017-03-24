@@ -17,11 +17,9 @@
 				<td><%= customer.id %></td>
 				<td><%= customer.name %></td>
 				<td><%= customer.email %></td>
-				<td><a href="/customer/show/<%= customer.id %>">Show</a></td>
-				<td><a href="/customer/edit/<%= customer.id %>">Edit</a></td>
-				<td><a href="/customer/destroy/<%= customer.id %>">Delete</a></td>
-				<td></td>
-				<td></td>
+				<td><a class="btn btn-info" href="/customer/show/<%= customer.id %>">Show</a></td>
+				<td><a class="btn btn-warning" href="/customer/edit/<%= customer.id %>">Edit</a></td>
+				<td><a class="btn btn-danger" href="/customer/destroy/<%= customer.id %>">Delete</a></td>
 			</tr>	  
 		<% }); %>
 		</tbody>
@@ -29,7 +27,8 @@
 	<table>
 		<tr>
 			<td>
-				<a class="btn btn-primary" href="/customer/new">Create Customer</a>	
+				<a class="btn btn-primary" href="/customer/new">Create Customer</a>
+				<a class="btn btn-primary" href="/">Go Home</a>
 			</td>
 		</tr>
 	</table>

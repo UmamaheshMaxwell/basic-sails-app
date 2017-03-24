@@ -23,7 +23,7 @@ module.exports = {
 		  if (err) { 
 		  	return next(err); 
 		  }
-		   res.json(stock)
+		   res.redirect("/customer/show/" + stock.owner)
 		});
 	}
 
