@@ -19,7 +19,7 @@ module.exports = {
 		})
 	},
 
-	show: function(req, res){
+	show: function(req, res, next){
 		Customer.findOne(req.params.id, function(err, customer){
 			if(err){
 				next(err)

@@ -4,4 +4,10 @@
 	<h2>Name  : <i><%= customer.name %></i></h2>
 	<h2>Email : <i><%= customer.email %></i></h2>
 	<h2>State : <i><%= customer.state %></i></h2>
+	<br>
+	<form action="/stock/new" method="POST">
+		<input type="hidden" name="owner" value="<%= customer.id %>">
+		<input class="btn btn-primary" type="submit" value="Add Stock">
+	</form>
 </div>
+
