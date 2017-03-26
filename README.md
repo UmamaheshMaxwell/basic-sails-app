@@ -1,4 +1,4 @@
-# basic-sails-app
+# Sails-Customer-App
 
 A [Sails](http://sailsjs.org) application. 
 

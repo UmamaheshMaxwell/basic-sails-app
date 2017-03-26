@@ -1,0 +1,24 @@
+<div class="container">
+	<h1>Stock Details</h1>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Symbol</th>
+				<th>Number of Shares</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><%= stock.symbol %></td>
+				<td><%= stock.number_of_shares %></td>
+			</tr>
+		</tbody>
+	</table>
+	<table class="tr">
+		<tr>
+			<td>
+				<a class="btn btn-primary" href="/customer/show/<%= stock.owner %>">Back</a>
+			</td>
+		</tr>
+	</table>
+</div>

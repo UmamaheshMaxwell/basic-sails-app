@@ -1,0 +1,8 @@
+<div class="container">
+	<h1>Edit Stock</h1>
+	<form action="/stock/update/<%= stock.id %>" method="POST">
+		<input class="form-control" type="text" name="symbol" value="<%= stock.symbol %>"><br>
+		<input class="form-control" type="text" name="number_of_shares" value="<%= stock.number_of_shares %>"><br>
+		<input class="btn btn-primary" type="submit" value="Update Stock">
+	</form>
+</div>

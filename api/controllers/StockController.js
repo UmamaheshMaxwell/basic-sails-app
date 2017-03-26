@@ -25,7 +25,46 @@ module.exports = {
 		  }
 		   res.redirect("/customer/show/" + stock.owner)
 		});
-	}
+	},
 
+	show: function(req, res, next){
+		Stock.findOne(req.params.id).exec(function (err, stock){
+			if (err) {
+				return next(err);
+			}
+			res.view({
+				stock : stock
+			});
+		});
+	},
+
+	edit: function(req, res, next){
+		Stock.findOne(req.params.id).exec(function (err, stock){
+			if (err) {
+				return next(err);
+			}
+			res.view({
+				stock : stock
+			});
+		});
+	},
+
+	update: function(req, res, next){   
+		Stock.update(req.params.id, req.params.all()).exec(function(err, stock){
+		  if (err) {
+		    res.redirect("/stock/edit/" + req.params.id)
+		  }
+		  res.redirect("/customer/show/" + stock[0].owner)		  
+		});
+	},
+
+	destroy: function(req, res, next){
+		Stock.destroy(req.params.id).exec(function (err, stock){
+		  if (err) { 
+		  	return next(err); 
+		  }		  
+		  res.redirect("/customer/show/" + stock[0].owner)
+		});
+	}
 };
 
