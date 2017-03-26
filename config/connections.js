@@ -46,6 +46,15 @@ module.exports.connections = {
     user: 'sails-user', //optional
     password: 'password', //optional
     database: 'Sails-Challenge' //optional
+  },
+
+  openshift_mysql :{
+    adapter: 'sails-mysql',
+    user:'sails_customer'
+    password: 'password',
+    database: 'sails',
+    host: process.env.OPENSHIFT_MYSQL_DB_HOST,
+    port: process.env.OPENSHIFT_MYSQL_DB_PORT
   }
 
   /***************************************************************************
