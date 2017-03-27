@@ -1,0 +1,14 @@
+<div class="container">
+	<h1>Add New User</h1>
+	<form action="/user/create" method="POST">
+		<input class="form-control" placeholder="Title" type="text" name="title"> <br>
+		<input class="form-control" placeholder="Name" type="text" name="name"> <br>
+		<input class="form-control" placeholder="Email" type="email" name="email"> <br>
+		<input class="form-control" placeholder="Password" type="password" name="encryptedPassword"> <br>
+		<input class="form-control" placeholder="Confirm Password" type="password" name="cPassword"> <br>
+
+		<input class="btn btn-primary" type="submit" value="Create User">
+		<a class="btn btn-primary"href="/user/index">Back</a>
+		<input type="hidden" name="_csrf" value="<%= _csrf %>" />
+	</form>
+</div>
